@@ -1,0 +1,62 @@
+{% extends "layout.html"     %}
+
+
+{% set bodyId = "page-ideias"   %}
+
+
+
+{%block title %}
+    <title>Ideias - Casa Criativa</title>
+{% endblock title %}
+
+
+{% block content %}
+
+<header>
+    <a href="/">
+        <img src="/logo.png" alt="Imagem da Logomarca">
+    </a>
+    
+    <nav>
+        <li><a href="/">Início</a></li>
+        <li><a class="button" href="#" onclick="onoff">Nova Ideia</a></li>
+    </nav>
+</header>
+
+<section id="title">
+    <p> Em exibição </p>
+    <h1> Ideias </h1>
+</section>
+
+<main>
+    <section id="ideias">
+        {% for ideia in ideias  %}
+        <div class="ideia">
+            <img 
+                src="{{ideia.image}}"
+                alt="Imagem de {{ideia.title}}"  >
+            
+            <div class="content">
+                <h3>
+                    {{ideia.title}}
+                </h3>
+                <p>
+                    {{ideia.category}}
+                </p>
+                <div class="description">
+                    {{ideia.description}}
+                </div>
+                <a href="{{ideia.link}}" target="black">Ir Para Ideia</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    </section>
+
+</main>
+
+<footer> 
+    Com ❤ <a href="www.rocketseat.com.br" target="black"> MFJ</a> 
+</footer>
+
+{% endblock %}

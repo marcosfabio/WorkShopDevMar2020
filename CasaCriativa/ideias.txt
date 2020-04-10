@@ -1,0 +1,69 @@
+
+const ideias = [
+    {
+        image: "https://image.flaticon.com/icons/svg/2729/2729007.svg",
+        title: "Cursos de Programação",
+        category: "Estudos",
+        description: "Aqui vai a descrição da ideia",
+        link: "https://rocketseat.com.br"
+    },
+
+    {
+        image: "https://image.flaticon.com/icons/svg/2729/2729005.svg",
+        title: "Exercícios",
+        category: "Saúde",
+        description: "Aqui vai a descrição da ideia",
+        link: "https://rocketseat.com.br"
+    },
+
+    {
+        image: "https://image.flaticon.com/icons/svg/2729/2729027.svg",
+        title: "Meditação",
+        category: "Mentalidade",
+        description: "Aqui vai a descrição da ideia",
+        link: "https://rocketseat.com.br"
+    },
+
+    {
+        image: "https://image.flaticon.com/icons/svg/2729/2729032.svg" ,
+        title: "Karaoke",
+        category: "Diversão em Família",
+        description: "Aqui vai a descrição da ideia",
+        link: "https://rocketseat.com.br"
+    },
+
+]
+
+
+
+
+
+
+
+// Isserir dado na Tabela.
+    const query = ` 
+    INSERT INTO ideias(
+        image,
+        title,
+        category,
+        description,
+        link
+    ) VALUES(?,?,?,?,?);
+    `
+
+    const values = [
+        "https://image.flaticon.com/icons/svg/2729/2729007.svg",
+        "Cursos de Programação",
+        "Estudos",
+        "Aqui vai a descrição da ideia",
+        "https://rocketseat.com.br"
+    ]
+
+
+
+    db.run(query,values, function(err){
+        if (err) return console.log(err)
+            
+        console.log(this)
+    })
+ 
